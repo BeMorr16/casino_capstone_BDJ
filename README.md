@@ -1,3 +1,5 @@
+https://66ad6a8364f3fcee7437771e--deft-lokum-4b73ba.netlify.app/
+
 Backend Repository: https://github.com/BeMorr16/capstone_casino_backend
 ---------------------
 Frontend Repository: https://github.com/BeMorr16/capstone_casino_frontend
