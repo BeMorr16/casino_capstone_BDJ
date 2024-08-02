@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.leaderboard-container {
+  background-image: url('./assets/LeaderBoard.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: 'Patrick Hand', sans-serif;
+}
+
+.tabs {
+  max-width:calc(8rem + 23vw);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-left: 80px;
+  justify-content: center;
+}
+
+.tab-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: calc(0.1rem + 0.1vw) calc(1rem + 0.5vw);
+  cursor: pointer;
+  font-family: 'Patrick Hand', sans-serif;
+  text-align: center;
+  max-height: 80px ;
+  max-width: 200px; /* Optional: set a max width for buttons */
+  font-size: calc(1rem + 0.5vw); /* Adjust font size */
+  flex: 1 1 calc(30% - 1rem); /* Ensure buttons are evenly distributed */
+}
+
+.tab-button.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.leaderboard {
+  background-color: rgba(0, 0, 0, 0);
+  padding: calc(1rem + 1vw);
+  height: calc(10rem + 14vw);
+  width: calc(10rem + 23vw);
+  max-width: 80vw;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: calc(1rem + 1vw);
+  overflow-y: scroll;
+  margin-left: 5vw;
+  border-top: 2px dashed rgba(255, 255, 255, 0.8);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.8);
+}
+
+.leaderboard-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center; /* Center the grid items */
+}
+
+.leaderboard-grid.bet {
+  grid-template-columns: repeat(2, 1fr); /* Two columns centered */
+}
+
+.leaderboard-grid.record {
+  grid-template-columns: repeat(4, 1fr); /* Four columns centered */
+}
+
+.leaderboard-grid.money {
+  grid-template-columns: repeat(2, 1fr); /* Two columns centered */
+}
+
+.leaderboard-grid .header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.leaderboard-grid .cell {
+  padding: calc(0.5rem + 0.5vw);
+  border: 1px dashed white;
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard-grid .cell:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar Styles */
+.leaderboard::-webkit-scrollbar {
+  width: calc(12px + 0.5vw);
+}
+
+.leaderboard::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb {
+  background-color: rgba(251, 237, 158, 0.8); /* Gold color */
+  border-radius: 10px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(189, 127, 50, 1); /* Brighten on hover */
+  border-color: rgba(255, 174, 55, 0.600);
+  box-shadow: 0 1px 15px 5px rgba(255, 174, 55, 0.75);
+}

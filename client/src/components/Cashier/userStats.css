@@ -1,0 +1,61 @@
+.Cashier-User-Stats{
+color:#ffffff;
+}
+
+.user-stats-content{
+  display: flex;
+  flex-direction: row; 
+}
+
+.user-stats {
+  border: 2px solid #b8860b;
+  border-radius: 12px; 
+  max-width: 800px;
+  margin: 20px auto;
+  background: #000000b2; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.stat-section {
+  padding: 16px 0;
+}
+
+.stat-section h3 {
+  font-size: 20px;
+  color: #ffffff; 
+  font-family: 'Times New Roman', serif; 
+  margin-bottom: 10px;
+}
+
+.stat-section p {
+  font-size: 16px;
+  color: #f0e68c; 
+  font-family: 'Times New Roman', serif; 
+}
+
+.total {
+  border-radius: 8px; 
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.blackjack {
+  border-radius: 8px; 
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.roulette {
+  border-radius: 8px; 
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.slots {
+  border-radius: 8px; 
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}

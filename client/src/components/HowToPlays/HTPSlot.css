@@ -1,0 +1,105 @@
+.SLTM-HTP-background {
+  background-image: url("../Slots/assets/images/HTP-3-Slots.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.SLTM-IMG-HTP-2 {
+    width: 40vw;
+    height: 70vh;
+    margin-right: 2%;
+    position: absolute; 
+    left: 2.5%; 
+    top: 31%;
+    z-index: 1;
+}
+
+.SLTM-IMG-HTP-3 {
+    width: 40vw;
+    height: 70vh; 
+    margin-right: 2%; 
+    position: absolute; 
+    left: 57.5%; 
+    top: 31%;
+    z-index: 1;
+}
+
+.SLTM-instructions {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.SLTM-Tittle,
+.SLTM-SubTittle {
+  color: white;
+}
+
+.SLTM-instructions p,
+.SLTM-instructions ul {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.SLTM-instructions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.SLTM-instructions li {
+  margin-bottom: 10px;
+}
+
+.SLTM-inst1 {
+    width: 32vw;
+    overflow-y: scroll; 
+    height: 60vh;
+    margin-right: 2%; 
+    position: absolute; 
+    left: 6%; 
+    top: 36%; 
+    z-index: 3;
+}
+
+.SLTM-inst2 {
+    width: 32vw;
+    overflow-y: scroll; 
+    height: 60vh;
+    position: absolute; 
+    right: 6.2%; 
+    top: 36%; 
+    z-index: 3;
+}
+
+/* Scrollbar Styles */
+.SLTM-inst1::-webkit-scrollbar,
+.SLTM-inst2::-webkit-scrollbar {
+  width: 12px;
+}
+
+.SLTM-inst1::-webkit-scrollbar-track,
+.SLTM-inst2::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.SLTM-inst1::-webkit-scrollbar-thumb,
+.SLTM-inst2::-webkit-scrollbar-thumb {
+  background-color: rgba(251, 237, 158, 0.8); 
+  border-radius: 10px;
+}
+
+.SLTM-inst1::-webkit-scrollbar-thumb:hover,
+.SLTM-inst2::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(189, 127, 50, 1); 
+  border-color: rgba(255, 174, 55, 0.600);
+  box-shadow: 0 1px 15px 5px rgba(255, 174, 55, 0.75);
+}

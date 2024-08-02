@@ -1,0 +1,98 @@
+/* Styles for ChipSelector Component */
+
+.chips-selector {
+  
+  /* display: flex; */
+  width: 80%;
+
+  align-self: center;
+  position: absolute; /* Position it absolutely within the container */
+  top: 94%; /* Adjust the positioning as needed */
+  left: 80%; /* Adjust the positioning as needed */
+  transform: translate(-50%, -50%); /* Center the floating component */
+  background-color: rgba(255, 255, 255, 0); /* Adjust as needed */
+  padding: 10px; /* Adjust as needed */
+  z-index: 10;
+}
+
+.chip-button {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 13px;
+  
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: url(../assets/Chip-darkblue.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 4rem;
+}
+
+.chip-button.selected {
+  box-shadow: 2px 2px 10px 6px #c7cdff;
+}
+
+.repeat-btn {
+  margin: 0px 10px;
+  height: 4vh;
+  border-radius: 5px;
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 1px solid white;
+  position: relative;
+  
+  box-shadow: 2px 2px 1px 4px #f9fffa;
+}
+.undo-btn {
+  margin: 0px 10px;
+  height: 4vh;
+  border-radius: 5px;
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 1px solid white;
+  
+  box-shadow: 2px 2px 1px 4px #f9fffa;
+}
+.clear-btn {
+  margin: 0px 10px;
+  height: 4vh;
+  border-radius: 5px;
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 1px solid white;
+  
+  box-shadow: 2px 2px 1px 4px #f9fffa;
+}
+
+.repeat-btn:active {
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 1px 1px 1px 2px #ffffff;
+  transform: translateX(1px) translateY(1px);
+}
+.undo-btn:active {
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 1px 1px 1px 2px #ffffff;
+  transform: translateX(1px) translateY(1px);
+}
+.clear-btn:active {
+  background-color: rgb(25, 76, 25);
+  color: white;
+  border: 2px solid white;
+  box-shadow: 1px 1px 1px 2px #ffffff;
+  transform: translateX(1px) translateY(1px);
+}
+@media screen and (max-width: 1000px) {
+  .chips-selector {
+    transform: scale(0.9) translateX(-705px) ;
+
+  }
+  
+  
+}

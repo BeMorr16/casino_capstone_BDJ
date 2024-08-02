@@ -1,0 +1,105 @@
+.bet-table {
+  border: 2px solid #b8860b; 
+  border-radius: 12px;
+  max-width: 1550px;
+  margin: 20px auto;
+  background: #000000b2; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  overflow: auto; 
+  max-height: 600px; 
+}
+
+.User-History-h2{
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+.bet-table::-webkit-scrollbar {
+  width: 12px; 
+}
+
+.bet-table::-webkit-scrollbar-track {
+  background: #000000b2; 
+  border-radius: 10px;
+}
+
+.bet-table::-webkit-scrollbar-thumb {
+  background: #b8860b; 
+  border-radius: 10px;
+  border-color: rgba(255, 174, 55, 0.6);
+}
+
+.bet-table::-webkit-scrollbar-thumb:hover {
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.filter-group label {
+  font-weight: bold;
+  color: #ffffff; 
+  border-color: transparent
+}
+
+.filter-group select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #b8860b; 
+  font-size: 16px;
+  background: #000000b2;
+  color: #fff; 
+}
+
+.table-headers {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-weight: bold;
+  color: #ffffff; 
+  padding: 10px;
+  border-bottom: 2px solid #b8860b;
+}
+
+.table-body {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+}
+
+.table-row {
+  display: contents;
+}
+
+.table-cell {
+  background: #000000b2; 
+  padding: 10px;
+  color: #ffffff; 
+}
+
+.table-cell:nth-child(odd) {
+  background: #000000b2; 
+}
+
+.table-cell:nth-child(even) {
+  background: #000000b2; 
+}
+
+.table-row:nth-child(odd) {
+  background: #000000b2; 
+}
+
+.table-row:nth-child(even) {
+  background: #000000b2; 
+}

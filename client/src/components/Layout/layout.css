@@ -1,0 +1,109 @@
+/* Navbar.css */
+
+.Layout {
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh;
+  margin: 0;
+  
+}
+nav.nav {
+  background-color: #2c2c2c;
+  padding: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  border-bottom: 5px solid #b8860b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.nav-user-info{
+  color: #f0e68c;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+.nav-links a {
+  color: #f0e68c;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: color 0.3s, background-color 0.3s;
+  z-index: 100000;
+}
+
+.nav-links a:hover{
+    color: #ffffff;
+    background-color: #2c2c2c;
+    text-shadow: 0 0 15px rgba(255, 174, 55, 0.75), 0 0 5px rgba(255, 174, 55, 0.6);
+  z-index: 1000000;
+}
+
+
+  main {
+    flex: 1; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 100000;
+  }
+  
+  .dropbtn {
+    color: #f0e68c;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover {
+    color: #ffffff;
+    background-color: #2c2c2c;
+    text-shadow: 0 0 15px rgba(255, 174, 55, 0.75), 0 0 5px rgba(255, 174, 55, 0.6);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2c2c2c;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+  }
+  
+  .dropdown-content a {
+    color: #f0e68c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    transition: color 0.3s, background-color 0.3s;
+    z-index: 1000;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  footer {
+    background-color: gray; 
+    text-align: center; 
+    padding: 10px; 
+    width: 100%; 
+  }

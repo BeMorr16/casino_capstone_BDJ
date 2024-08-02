@@ -1,0 +1,253 @@
+.Casino-background {
+  background-image: url("../../components/Slots/assets/images/casino-bg.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-width: 320px;
+}
+
+.Casino-Form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0vh;
+  margin: 0;
+  min-width: 320px;
+  min-height: 900px;
+  transform: scale(0.9) translateY(-10%);
+}
+
+.Casino-Slots-Img {
+  height: 480px;
+  width: 200px;
+  position: relative;
+  left: -55px;
+}
+
+.Casino-Roulette-Img {
+  height: 480px;
+  width: 200px;
+  position: relative;
+  left: 7px;
+}
+
+.Casino-Blackjack-Img {
+  height: 480px;
+  width: 200px;
+  position: relative;
+  left: 75px;
+}
+.Casino-Button-Blackjack {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    top: 170px;
+  }
+.Casino-Button-Roulette {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  top: 170px;
+}
+
+.Casino-Button-Slots {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    top: 170px;
+  }
+
+  .Casino-Chips {
+    position: absolute;
+    bottom: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px; 
+    font-family: 'Times New Roman', serif; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #fff; 
+    background-color: #2c2c2c;
+    border: 3px solid  #b8860b; 
+    border-radius: 8px; 
+    text-shadow: 1px 1px 2px #000; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+  
+  .Casino-Chips:hover {
+    background-color: #2c2c2c; 
+    border-color: rgba(255, 174, 55, 0.6);
+    box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+  }
+  
+
+.Casino-Button:hover,
+.Casino-Slots-Img:hover,
+.Casino-Roulette-Img:hover,
+.Casino-Blackjack-Img:hover {
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+/* Media Queries */
+
+/* Large laptops and desktops */
+
+@media (max-width: 1440px), (max-height: 900px) {
+    .Casino-Slots-Img,
+    .Casino-Roulette-Img,
+    .Casino-Blackjack-Img {
+      height: 400px;
+      width: 170px;
+    }
+  
+    .Casino-Slots-Img {
+      left: -35px;
+    }
+  
+    .Casino-Roulette-Img {
+      left: 15px;
+    }
+  
+    .Casino-Blackjack-Img {
+      left: 65px;
+    }
+  
+    .Casino-Button-Blackjack,
+    .Casino-Button-Roulette,
+    .Casino-Button-Slots {
+      top: 149px;
+    }
+  }
+  
+  /* Laptops */
+  @media (max-width: 1024px), (max-height: 768px) {
+    .Casino-Slots-Img,
+    .Casino-Roulette-Img,
+    .Casino-Blackjack-Img {
+      height: 400px;
+      width: 170px;
+    }
+  
+    .Casino-Slots-Img {
+      left: -35px;
+    }
+  
+    .Casino-Roulette-Img {
+      left: 15px;
+    }
+  
+    .Casino-Blackjack-Img {
+      left: 65px;
+    }
+  
+    .Casino-Button-Blackjack,
+    .Casino-Button-Roulette,
+    .Casino-Button-Slots {
+      top: 149px;
+    }
+  }
+  
+  /* Tablets large */
+  @media (max-width: 837px) and (orientation: landscape), (max-height: 600px) {
+    .Casino-Slots-Img,
+    .Casino-Roulette-Img,
+    .Casino-Blackjack-Img {
+      height: 300px;
+      width: 130px;
+    }
+  
+    .Casino-Slots-Img {
+      left: -20px;
+    }
+  
+    .Casino-Roulette-Img {
+      left: 1px;
+    }
+  
+    .Casino-Blackjack-Img {
+      left: 30px;
+    }
+  
+    .Casino-Button-Blackjack,
+    .Casino-Button-Roulette,
+    .Casino-Button-Slots {
+      top: 100px;
+    }
+  
+    .Casino-Form {
+      transform: scale(0.8) translateY(-10%);
+    }
+  }
+  
+  /* Tablets medium */
+  @media (max-width: 600px) {
+    .Casino-Slots-Img,
+    .Casino-Roulette-Img,
+    .Casino-Blackjack-Img {
+        height: 520px;
+        width: 245px;
+    }
+  
+    .Casino-Slots-Img {
+        left: -20px;
+    }
+  
+    .Casino-Roulette-Img {
+        left: 20px;
+    }
+  
+    .Casino-Blackjack-Img {
+        left: 65px;
+    }
+  
+    .Casino-Button-Blackjack,
+    .Casino-Button-Roulette,
+    .Casino-Button-Slots {
+      top: 170px;
+    }
+  
+    .Casino-Form {
+      transform: scale(0.7) translateY(-10%);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 400px), (max-height: 320px) {
+    .Casino-Slots-Img,
+    .Casino-Roulette-Img,
+    .Casino-Blackjack-Img {
+      height: 200px;
+      width: 90px;
+    }
+  
+    .Casino-Slots-Img {
+      left: -5px;
+    }
+  
+    .Casino-Roulette-Img {
+      left: 0;
+    }
+  
+    .Casino-Blackjack-Img {
+      left: 10px;
+    }
+  
+    .Casino-Button-Blackjack,
+    .Casino-Button-Roulette,
+    .Casino-Button-Slots {
+      top: 60px;
+    }
+  
+    .Casino-Form {
+      transform: scale(0.6) translateY(-10%);
+    }
+  }

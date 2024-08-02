@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.RLT-HTP-background {
+  background-image: url("../Slots/assets/images/HTP-3-Roulette.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.RLT-IMG-HTP-2 {
+  width: 40vw;
+  height: 70vh;
+  margin-right: 2%;
+  position: absolute; 
+  left: 2.5%; 
+  top: 31%;
+  z-index: 1;
+}
+
+.RLT-IMG-HTP-3 {
+  width: 40vw;
+  height: 70vh; 
+  margin-right: 2%; 
+  position: absolute; 
+  left: 57.5%; 
+  top: 31%;
+  z-index: 1;
+}
+
+.RLT-instructions {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.RLT-Tittle,
+.RLT-SubTittle {
+  color: white;
+}
+
+.RLT-instructions p,
+.RLT-instructions ul {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.RLT-instructions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.RLT-instructions li {
+  margin-bottom: 10px;
+}
+
+.RLT-inst1 {
+  width: 32vw;
+  overflow-y: scroll; 
+  height: 60vh;
+  margin-right: 2%; 
+  position: absolute; 
+  left: 6%; 
+  top: 36%; 
+  z-index: 3;
+}
+
+.RLT-inst2 {
+  width: 32vw;
+  overflow-y: scroll; 
+  height: 60vh;
+  position: absolute; 
+  right: 6.2%; 
+  top: 36%; 
+  z-index: 3;
+}
+
+/* Scrollbar Styles */
+.RLT-inst1::-webkit-scrollbar,
+.RLT-inst2::-webkit-scrollbar {
+  width: 12px;
+}
+
+.RLT-inst1::-webkit-scrollbar-track,
+.RLT-inst2::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.RLT-inst1::-webkit-scrollbar-thumb,
+.RLT-inst2::-webkit-scrollbar-thumb {
+  background-color: rgba(251, 237, 158, 0.8); 
+  border-radius: 10px;
+}
+
+.RLT-inst1::-webkit-scrollbar-thumb:hover,
+.RLT-inst2::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(189, 127, 50, 1); 
+  border-color: rgba(255, 174, 55, 0.600);
+  box-shadow: 0 1px 15px 5px rgba(255, 174, 55, 0.75);
+}

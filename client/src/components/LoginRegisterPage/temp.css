@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.container {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  /* position: relative; */
+  min-height: 90%;
+  /* min-width: 90%; */
+  height: 93vh;
+  /* margin: 1rem 1rem 1rem 1rem; */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  /* max-height: 820px; */
+}
+
+.sign-up-container,
+.sign-in-container {
+  position: absolute;
+  top: auto;
+  height: inherit;
+  transition: all 0.6s ease-in-out;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.sign-up-container {
+  left: 0;
+}
+
+.sign-in-container {
+  right: 0;
+  z-index: 2;
+}
+
+.sign-up-container.active {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.sign-in-container.active {
+  transform: translateX(-80%);
+  opacity: 1;
+}
+
+.form {
+  background-color: rgba(33, 44, 47, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+  width: 80%;
+  left: auto;
+  right: auto;
+  border: 2px solid white;
+}
+
+.form h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.button {
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.ghost-button {
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+  }
+  
+  .ghost-button:active {
+    transform: scale(0.95);
+  }
+  
+  .ghost-button:focus {
+    outline: none;
+  }
+
+.anchor {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.overlay-container {
+  position: absolute;
+  top: auto;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay-container.active {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: rgba(33, 44, 47, 1);
+  background: url('/images/login-register-img.png') no-repeat center center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -80%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+.overlay-container.active .overlay {
+  transform: translateX(50%);
+}
+
+.left-overlay-panel,
+.right-overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.left-overlay-panel {
+  transform: translateX(-20%);
+  top: 16%;
+  right: 58%;
+  /* transform: rotate(28deg); */
+}
+.right-overlay-panel{
+  top: 15%;
+  left: 36%;
+}
+
+
+.right-overlay-panel {
+  right: 0;
+  transform: translateX(0);
+}
+
+.overlay-container.active .left-overlay-panel {
+  transform: translateX(0) rotate(24deg);
+}
+
+.overlay-container.active .right-overlay-panel {
+  transform: translateX(20%);
+}
+
+.left-overlay-panel h1,
+.right-overlay-panel h1 {
+  font-size: 1.5rem;
+}
+
+.left-overlay-panel p,
+.right-overlay-panel p {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+}
+
+.left-overlay-panel h1,
+.right-overlay-panel h1 {
+  margin: 0;
+  margin-bottom: 0;
+}
+.left-overlay-panel p,
+.right-overlay-panel p {
+  margin: 0 0 0 0;
+  
+}
+.left-overlay-panel button,
+.right-overlay-panel button {
+  margin-top: 0;
+}

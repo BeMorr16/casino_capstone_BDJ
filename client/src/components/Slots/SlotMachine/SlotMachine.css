@@ -1,0 +1,441 @@
+.SLTM-slot-machine-background {
+  background-image: url("../assets/images/SLTM-background.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.SLTM-buttons-container {
+  position: absolute;
+  top: 80px; /* Adjust this value to position the row from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.SLTMtoCasinoFloorButton,
+.SLTMtoRouletteButton,
+.SLTMtoBlackJackButton {
+  padding: 10px 20px;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2c2c2c;
+  border: 3px solid #b8860b;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SLTMtoCasinoFloorButton:hover,
+.SLTMtoRouletteButton:hover,
+.SLTMtoBlackJackButton:hover {
+  background-color: #2C2C2C;
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+.SLTM-SlotMachineIMG {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.SLTM-MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0vh;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  transform: scale(0.9) translateY(-10%);
+}
+
+.SLTM-Blankspace {
+  height: 80px;
+}
+
+.SLTM-BottomContainer {
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(
+    180deg,
+    rgba(83, 1, 7, 1) 0.2%,
+    rgba(191, 4, 20, 1) 25%,
+    rgba(88, 1, 7, 1) 100%
+  );
+  border: solid 10px rgba(88, 1, 7, 1);
+  width: 590px;
+  box-sizing: border-box;
+}
+
+.SLTM-slot-machine-container {
+  position: relative;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  max-width: 450px;
+  margin: 90px auto 0 auto;
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.SLTM-reel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color: #ffffff;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.SLTM-reel {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  line-height: 1.5;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-size: 4em;
+  padding: 20px;
+  width: 80px;
+  height: 112px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  transition: all 0.2s;
+}
+
+.SLTM-betting-container,
+.SLTM-bet-amount-container,
+.SLTM-SLTMBetAmount,
+.SLTM-SLTMSpecialBet {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  line-height: 1.5;
+}
+
+.SLTM-spin-button-container {
+  padding: 10px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+}
+
+.SLTM-spin-button {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f59e0b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.SLTM-spin-button:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+
+.SLMSoundOnOff {
+  z-index: 2;
+  position: relative;
+  float: right;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+}
+
+.SLTM-info-container {
+  padding: 10px;
+}
+
+.SLTM-Money-info-container {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.SLTM-message-container {
+  margin-top: -25px;
+  margin-bottom: 85px;
+  padding: 40px;
+  line-height: 1.5;
+  border-radius: 10px;
+  transition: all 0.1s;
+  transition: opacity 0.1s;
+  min-height: 23px;
+  text-align: center;
+}
+
+.SLTM-message-success {
+  background-color: #065f46;
+}
+
+.SLTM-message-error {
+  background-color: #7f1d1d;
+}
+
+.SLTM-last-win {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 200px;
+  margin-right: 200px;
+  color: #fbbf24;
+  font-size: 1.4em;
+  z-index: 5;
+  text-align: center;
+  color: #fbbf24;
+  animation: pulse 1s infinite;
+}
+
+.SLTM-bet-button,
+.SLTM-bet-amount-button {
+  color: rgb(255, 255, 255);
+  background: transparent;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  transition: border-color 0.3s ease;
+  z-index: 2;
+  position: relative;
+  font-family: inherit;
+}
+
+.SLTM-bet-button.selected,
+.SLTM-bet-amount-button.selected {
+  border: 2px solid gold;
+  box-shadow: 0 0 5px gold;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced Media Queries */
+
+@media (max-width: 768px) {
+  .SLTM-slot-machine-container,
+  .SLTM-BottomContainer {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .SLTM-.SLTM-Money-info-container,
+  .SLTM-spin-button {
+    font-size: 1.2em;
+  }
+
+  .SLTM-reel {
+    font-size: 3em;
+    width: 70px;
+    height: 100px;
+  }
+
+  .SLTM-message-container {
+    padding: 40px;
+  }
+
+  .SLTM-last-win {
+    margin-right: 290px;
+    font-size: 1.17em;
+  }
+
+  .SLTMtoCasinoFloorButton,
+  .SLTMtoRouletteButton,
+  .SLTMtoBlackJackButton {
+    padding: 10px 5px;
+    font-family: "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2c2c2c;
+    border: 3px solid #b8860b;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
+
+@media (max-width: 425px) {
+  .SLTM-SlotMachineIMG {
+    width: 427px;
+    height: 600px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .SLTM-slot-machine-container,
+  .SLTM-BottomContainer {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .SLTM-slot-machine-title {
+    font-size: 1.5em;
+  }
+
+  .SLTM-reel {
+    font-size: 2.5em;
+    width: 40px;
+    height: 90px;
+  }
+
+  .SLTM-spin-button,
+  .SLTM-bet-button,
+  .SLTM-bet-amount-button {
+    font-size: 1em;
+  }
+
+  .SLTM-message-container {
+    font-size: 0.9em;
+  }
+
+  .SLTM-last-win {
+    margin-right: 15px;
+    margin-left: 100px;
+    font-size: 1.17em;
+  }
+}
+
+@media (max-width: 375px) {
+  .SLTM-message-container {
+    font-size: 0.7em;
+  }
+
+  .SLTM-SlotMachineIMG {
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .SLTM-reel {
+    font-size: 2.3em;
+    width: 30px;
+    height: 90px;
+    margin-right: 15px;
+    margin-left: 17px;
+  }
+
+  .SLTM-spin-button {
+    font-size: 1.2em;
+  }
+
+  .SLTM-Money-info-container {
+    font-size: 1em;
+  }
+
+  .SLTM-last-win {
+    margin-right: 15px;
+    margin-left: 70px;
+    font-size: 1.17em;
+  }
+}
+
+@media (max-width: 320px) {
+  .SLTM-message-container {
+    font-size: 0.6em;
+  }
+
+  .SLTM-SlotMachineIMG {
+    width: 322px;
+    height: 600px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .SLTM-reel {
+    font-size: 2em;
+    width: 20px;
+    height: 90px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .SLTM-spin-button {
+    font-size: 1.2em;
+  }
+
+  .SLTM-Money-info-container {
+    font-size: 0.8em;
+  }
+
+  .SLTM-last-win {
+    margin-right: 15px;
+    margin-left: 40px;
+    font-size: 1.14em;
+  }
+}

@@ -1,0 +1,128 @@
+/* UserProfile.css */
+.Cashier-Background {
+  background-image: url("../../components/Slots/assets/images/Cashier-page.png");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-width: 320px;
+}
+
+.BankContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bank-top-section {
+  display: flex;
+}
+
+.user-profile {
+  border: 2px solid #b8860b; 
+  padding: 24px;
+  border-radius: 12px; 
+  max-width: 400px;
+  margin: 20px auto;
+  background: #000000b2; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-profile h2 {
+  font-size: 24px;
+  color: #ffffff; 
+  font-family: 'Times New Roman', serif; 
+}
+
+.edit-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff; 
+}
+
+.edit-button:hover {
+  color: #ffffff; 
+}
+
+.save-button {
+  background-color: #b8860b; 
+  color: #ffffff; 
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-section strong {
+  font-weight: bold;
+  color: #ffffff; 
+  min-width: 120px;
+  font-family: 'Times New Roman', serif; 
+}
+
+.user-section span {
+  font-size: 16px;
+  color: #f0e68c; 
+  font-family: 'Times New Roman', serif; 
+}
+
+.user-section input {
+  border: 1px solid #b8860b; 
+  padding: 8px;
+  border-radius: 8px; 
+  font-size: 16px;
+  color: #ffffff; 
+  background: #000000b2; 
+  width: 100%;
+}
+
+.user-section input:focus {
+  outline: none;
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+.user-section input[type="password"] {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.user-section:nth-child(odd) {
+  padding: 8px 12px;
+  border-radius: 8px; 
+}
+
+.user-section:nth-child(even) {
+  padding: 8px 12px;
+  border-radius: 8px; 
+}

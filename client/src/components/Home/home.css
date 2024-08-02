@@ -1,0 +1,116 @@
+/* LandingPage.css */
+
+.landing-page {
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 1.6;
+    padding: 20px;
+
+    margin: 0 auto;
+    background: url('/images/home-background.png')no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .welcome-section {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #000000b2;
+    border: 2px solid #B8860B;
+    border-radius: 8px;
+  }
+  
+  .welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #F0E68C;
+  }
+  .welcome-section h2 {
+    font-size: 2rem;
+    color: #F0E68C;
+  }
+  
+  .welcome-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .home-links {
+    color: #F0E68C;
+  }
+  
+  .guest-access, .registered-user-benefits, .account-info-stats, .leaderboards, .blackjack-mini-game {
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #B8860B;
+    border-radius: 8px;
+    background: #000000b2;
+  }
+  
+  .guest-access h2, .registered-user-benefits h2, .account-info-stats h2, .leaderboards h2, .blackjack-mini-game h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #F0E68C;;
+  }
+  
+  .guest-access p, .registered-user-benefits p, .account-info-stats p, .leaderboards p, .blackjack-mini-game p {
+    font-size: 1rem;
+  }
+  
+  .cta-section {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2C2C2C;
+    border: 3px solid  #B8860B;
+    border-radius: 8px;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  
+  .cta-button:hover {
+    background-color: #2C2C2C;
+    border-color: rgba(255, 174, 55, 0.6);
+    box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+  }
+  .home-end-section {
+    background: #000000b2;
+    border: 2px solid #B8860B;
+    border-radius: 8px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 10px;
+    color: #F0E68C;
+  }
+  
+  @media (max-width: 768px) {
+    .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

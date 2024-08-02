@@ -1,0 +1,157 @@
+.board-container {
+  position: relative;
+  width: 1500px; /* Adjust to your needs */
+  height: 700px; /* Adjust to your needs */
+  
+  background-image: url("../assets/roulette-table-green.png");
+  background-size: contain; /* Ensure the image fits without stretching */
+  background-position: center top; /* Adjust based on your needs */
+  background-repeat: no-repeat; /* No repeat */
+  /* border: 1px solid yellow; */
+}
+
+.outer-grid {
+  display: grid;
+  grid-template-columns: 55px repeat(26, 26.9px) 55px; /* Zero cell + 26 columns for bets + extra column */
+  grid-template-rows: auto auto; /* Top row, middle row, bottom row */
+
+  width: 880px; /* Calculate the width based on cell sizes */
+  position: absolute; /* Position the grid absolutely within the container */
+  top: 271.1px; /* Adjust based on your needs */
+  left: 1037.4px;
+  transform: translateX(-50%); 
+  /* border: 1px solid yellow; */
+}
+
+.top-row {
+  display: grid;
+  grid-template-columns: 55px repeat(26, 25.23px) 55px; /* Zero cell + 26 columns for bets + extra column */
+  gap: 0px;
+  grid-column: 1 / -1; /* Span all columns */
+  grid-row: 1; /* First row */
+  position: relative; /* Ensure positioning within the outer grid */
+}
+
+.middle-column {
+  display: grid;
+  grid-template-columns: repeat(26, 25.23px); /* 26 columns */
+  grid-template-rows: repeat(6, 33px); /* 6 rows */
+  gap: 0px;
+  grid-column: 2 / span 26; /* Middle columns */
+  grid-row: 2; /* Second row */
+  position: relative; /* Ensure positioning within the top row */
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-rows: 50px 64px; /* 2 rows: one for dozens, one for other bets */
+  gap: 0px;
+  left: 0.95rem;
+  width: 600px;
+  grid-column: 2 / span 26; /* Middle columns */
+  grid-row: 3; /* Third row */
+  position: relative; /* Ensure positioning within the outer grid */
+}
+
+.bottom-row-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for top, 6 for bottom */
+
+}
+
+.bottom-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 3 columns for top, 6 for bottom */
+}
+
+.cell,
+.bet-cell {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+  background-color: transparent; /* Transparent background */
+  position: relative;
+  /* border: 1px solid yellow; */
+  gap: 0px;
+}
+
+.zero-cell {
+  grid-column: 1; /* First column */
+  grid-row: 1 / span 3; /* Span three rows */
+  background-color: transparent;
+  width: 3.5rem;
+  height: 11rem; /* 6 rows of 34px height + 2 gaps of 1px */
+}
+
+.number,
+.split,
+.corner {
+  width: 25.23px;
+  height: 2.2rem;
+}
+
+.bet-cell {
+  background-color:transparent;
+  text-align: center;
+}
+
+.chip {
+  background-image: url(../assets/Chip-darkblue.png);
+  background-size: contain; /* Ensure the image fits without stretching */
+  background-position: center top; /* Adjust based on your needs */
+  background-repeat: no-repeat; /* No repeat */
+  color: rgb(0, 0, 0);
+  font-size: x-small;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Absolute positioning to avoid changing cell size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the chip */
+}
+
+/* Media Queries for Scaling */
+@media screen and (max-width: 1600px) {
+  .board-container {
+    transform: scale(.9);
+  }
+  
+  
+}
+
+@media screen and (max-width: 1400px) {
+  .board-container {
+    transform: scale(0.8);
+  }
+  
+}
+
+@media screen and (max-width: 1200px) {
+  .board-container {
+    transform: scale(0.7);
+  }
+  
+}
+
+@media screen and (max-width: 1000px) {
+  .board-container {
+    transform: scale(0.6);
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  .board-container {
+    transform: scale(0.5);
+  }
+  
+}
