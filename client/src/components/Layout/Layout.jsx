@@ -22,6 +22,11 @@ export default function Layout() {
     navigate('/blackjack')
   }
 
+  function handleLeaveGame() {
+    window.sessionStorage.removeItem("isMiniGame");
+    setIsMiniGame(false)
+    resetTableChips()
+  }
 
   return (
       <div className='Layout'>
@@ -34,11 +39,11 @@ export default function Layout() {
             </div>
           )}
           {!isLoggedIn ? (
-          <Link to='/' onClick={resetTableChips}>
+          <Link to='/' onClick={handleLeaveGame}>
           Home
             </Link> 
           ) : (
-              <Link to='/cashier' onClick={resetTableChips}>
+              <Link to='/cashier' onClick={handleLeaveGame}>
                 Cashier
               </Link>
           )}
@@ -47,15 +52,15 @@ export default function Layout() {
           <Link to="#" className="dropbtn">How to Play</Link>
           <div className="dropdown-content">
               {isLoggedIn && <Link to="/">Welcome</Link>}
-            <Link to="/howtoplay/blackjack" onClick={resetTableChips}>Blackjack</Link>
-            <Link to="/howtoplay/roulette" onClick={resetTableChips}>Roulette</Link>
-            <Link to="/howtoplay/slots" onClick={resetTableChips}>Slots</Link>
+            <Link to="/howtoplay/blackjack" onClick={handleLeaveGame}>Blackjack</Link>
+            <Link to="/howtoplay/roulette" onClick={handleLeaveGame}>Roulette</Link>
+            <Link to="/howtoplay/slots" onClick={handleLeaveGame}>Slots</Link>
           </div>
           </div>
           
 
-          <Link to='/leaderboards' onClick={resetTableChips}>Leaderboards</Link>
-          <Link to='/casino' onClick={resetTableChips}>Casino</Link>
+          <Link to='/leaderboards' onClick={handleLeaveGame}>Leaderboards</Link>
+          <Link to='/casino' onClick={handleLeaveGame}>Casino</Link>
           {isLoggedIn && <Link onClick={sendToMiniGame}>MiniGame</Link>}
           {isLoggedIn ? (<Link to='/' onClick={handleLogout}>Logout</Link>) : (<Link to='/account' onClick={resetTableChips}> Login</Link>)}
 

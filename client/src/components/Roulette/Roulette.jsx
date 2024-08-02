@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Board from "./Board/Board";
 import ChipsSelector from "./ChipSelector/ChipSelector";
@@ -16,19 +16,17 @@ import { getRandomInt } from "./helpers/utils";
 import { addTransaction } from "../Utils/APIRequests";
 import useUserState from "../../store/store";
 import { useMutation } from "@tanstack/react-query";
-import calculateWinningsHelper, {
-  sendRouletteTransaction,
-} from "./helpers/calculateWinningsHelper";
+import calculateWinningsHelper from "./helpers/calculateWinningsHelper";
 
 const Roulette = () => {
   const navigate = useNavigate();
-  const [number, setNumber] = useState(""); // Default to an empty string
+  const [number, setNumber] = useState("");
   const [placedBets, setPlacedBets] = useState([]);
   const [betHistory, setBetHistory] = useState([]);
   const [lastBets, setLastBets] = useState([]);
-  const [result, setResult] = useState(0); // Default to 0
+  const [result, setResult] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
-  const [totalBet, setTotalBet] = useState(0); // New state for total bet
+  const [totalBet, setTotalBet] = useState(0);
 
   const [selectedChip, setSelectedChip] = useState(1);
   const [numberHistory, setNumberHistory] = useState([]);
@@ -39,16 +37,37 @@ const Roulette = () => {
       24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26,
     ],
   });
-  const { tableChips, isLoggedIn, userMoney, adjustTableChips, id } =
-    useUserState();
+  const {
+    tableChips,
+    isLoggedIn,
+    userMoney,
+    setUserMoney,
+    adjustTableChips,
+    id,
+  } = useUserState();
+
+  // Mutation setup
   const transactionMutation = useMutation({
     mutationFn: addTransaction,
+    onSuccess: (data) => {
+      console.log("Transaction response:", data);
+      if (data && data.editedUser.user_money !== undefined) {
+        setUserMoney(() => data.editedUser.user_money);
+      } else {
+        console.error("Unexpected response structure:", data);
+      }
+    },
+    onError: (error) => {
+      console.error("Error sending transaction:", error);
+    },
   });
+
   const [chipCount, setChipCount] = useState(() => {
     if (isLoggedIn) {
       if (tableChips > 0) {
-        return tableChips;
-      } else if (tableChips === 0) {
+        adjustTableChips(0); // comment to remove this line
+        return userMoney;
+      } else {
         navigate("/casino");
         return 0;
       }
@@ -93,6 +112,30 @@ const Roulette = () => {
     setLastNumber(number);
   };
 
+  const sendRouletteTransaction = async (win, money, result) => {
+    const transaction = {
+      id: id,
+      game: "roulette",
+      win_loss: win,
+      money,
+      result: `Winning number: ${result.winningNumber}. Bets that hit: ${result.betResults}`,
+    };
+
+    console.log("Sending transaction:", transaction);
+
+    try {
+      const response = await transactionMutation.mutateAsync(transaction);
+      console.log("Transaction response:", response);
+      if (response && response.editedUser.user_money !== undefined) {
+        setUserMoney(()=> response.editedUser.user_money);
+      } else {
+        console.error("Unexpected response structure:", response);
+      }
+    } catch (error) {
+      console.error("Error sending transaction:", error);
+    }
+  };
+
   const handleEndOfGame = (randomNumber) => {
     const { totalWinnings, betResults, totalBetAmount, totalWonAmount } =
       calculateWinningsHelper(randomNumber, placedBets);
@@ -103,19 +146,18 @@ const Roulette = () => {
     setLastBets(placedBets);
     setPlacedBets([]);
     setTotalBet(0); // Reset total bet after the game ends
+    console.log(totalWonAmount, "------------")
     const win = totalWonAmount > 0;
     const money = win ? totalWonAmount : -totalBetAmount;
-    sendRouletteTransaction(
-      win,
-      money,
-      {
-        winningNumber: randomNumber,
-        betResults: betResults
-          .map((result) => `Bet: ${result.bet}, Payout: ${result.payout}`)
-          .join(", "),
-      },
-      transactionMutation
-    );
+    console.log(win, "WIN", money )
+    const resultDetails = {
+      winningNumber: randomNumber,
+      betResults: betResults
+        .map((result) => `Bet: ${result.bet}, Payout: ${result.payout}`)
+        .join(", "),
+    };
+
+    sendRouletteTransaction(win, money, resultDetails);
   };
 
   const handleSpinClick = () => {

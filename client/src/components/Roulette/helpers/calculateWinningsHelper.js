@@ -66,7 +66,7 @@ const calculateWinningsHelper = (number, placedBets) => {
     }
   });
 
-  const totalWonAmount = totalPayoutAmount - totalBetAmount;
+  const totalWonAmount = totalPayoutAmount;
 
   return { totalWinnings, betResults, totalBetAmount, totalWonAmount };
 };

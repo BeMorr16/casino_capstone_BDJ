@@ -65,7 +65,8 @@ export default function Blackjack() {
     const { tableChips, isLoggedIn, adjustTableChips, isMiniGame, setUserMoney, setTableChips, setIsMiniGame } = useUserState();
     const miniGameMarker = window.sessionStorage.getItem("isMiniGame") === "true" || isMiniGame;
     const miniGameChipCount = parseInt(window.sessionStorage.getItem("miniGameChipCount") || "100", 10);
-    const betsRemainingSS = parseInt(window.sessionStorage.getItem("betsRemaining") || "10", 10);
+  const betsRemainingSS = parseInt(window.sessionStorage.getItem("betsRemaining") || "10", 10);
+  console.log(miniGameMarker)
   const [chipCount, setChipCount] = useState(() => {
     if (isLoggedIn) {
       if (tableChips > 0 && !miniGameMarker) {

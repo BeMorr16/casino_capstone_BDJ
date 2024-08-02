@@ -7,15 +7,18 @@ export default function BJnavigations() {
     const { returnChipsToTotal } = useUserState();
 
     function handleToCasino() {
-        returnChipsToTotal();
+      returnChipsToTotal();
+      window.sessionStorage.removeItem("isMiniGame");
         navigate("/casino");
       }
     
-      function handleToSlots() {
+  function handleToSlots() {
+    window.sessionStorage.removeItem("isMiniGame");
         navigate("/slots");
       }
     
-      function handleToRoulette() {
+  function handleToRoulette() {
+    window.sessionStorage.removeItem("isMiniGame");
         navigate("/roulette");
       }
     
