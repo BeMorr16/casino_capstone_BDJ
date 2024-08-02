@@ -1,5 +1,5 @@
-Backend Repository: https://github.com/BeMorr16/capstone_casino_backend\n
-Frontend Repository: https://github.com/BeMorr16/capstone_casino_frontend\n
+Backend Repository: https://github.com/BeMorr16/capstone_casino_backend
+Frontend Repository: https://github.com/BeMorr16/capstone_casino_frontend
 
 Wise Guys Casino
 Overview
