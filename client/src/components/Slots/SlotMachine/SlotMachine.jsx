@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Slots from "../Slots/Slots";
@@ -28,7 +28,7 @@ const SlotMachine = () => {
   const winAudio = new Audio(winSound);
   const loseAudio = new Audio(loseSound);
   const coinAudio = new Audio(coinSound);
-  const { id, isLoggedIn, tableChips, userMoney, adjustTableChips } =
+  const { id, isLoggedIn, tableChips, userMoney, adjustTableChips, returnChipsToTotal } =
     useUserState();
 
   const [chipCount, setChipCount] = useState(() => {
@@ -245,19 +245,29 @@ const SlotMachine = () => {
       <div className="SLTM-buttons-container">
         <button
           className="SLTMtoBlackJackButton"
-          onClick={() => navigate("/blackjack")}
+          onClick={() => {
+            returnChipsToTotal()
+            navigate("/blackjack")
+          }}
         >
           To BlackJack
         </button>
         <button
           className="SLTMtoCasinoFloorButton"
-          onClick={() => navigate("/casino")}
+          onClick={() => {
+            returnChipsToTotal()
+            navigate("/casino") 
+            
+          }}
         >
           Back to Casino Floor
         </button>
         <button
           className="SLTMtoRouletteButton"
-          onClick={() => navigate("/roulette")}
+          onClick={() => {
+            returnChipsToTotal()
+            navigate("/roulette") 
+          }}
         >
           To Roulette
         </button>
