@@ -140,13 +140,13 @@ const Roulette = () => {
     const { totalWinnings, betResults, totalBetAmount, totalWonAmount } =
       calculateWinningsHelper(randomNumber, placedBets);
 
-    const newBalance = chipCount + totalWinnings;
+    const newBalance = totalWinnings;
     setChipCount(newBalance);
     setResult(totalWinnings);
     setLastBets(placedBets);
     setPlacedBets([]);
     setTotalBet(0); // Reset total bet after the game ends
-    console.log(totalWonAmount, "------------")
+    console.log(totalBetAmount, "------------")
     const win = totalWonAmount > 0;
     const money = win ? totalWonAmount : -totalBetAmount;
     console.log(win, "WIN", money )
