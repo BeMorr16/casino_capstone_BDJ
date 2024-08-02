@@ -21,9 +21,9 @@ TO RUN LOCALLY:
 1. git clone git@github.com:BeMorr16/casino_capstone_BDJ.git
 2. cd casino_capstone_BDJ
 3. cd backend
-4. steps 2-7 below
+4. steps 3-9 below
 5. cd ../client
-6. steps 10-12 below
+6. steps 9-12 below
 ---------------------
 
 2. _Through the separate repositorys_
