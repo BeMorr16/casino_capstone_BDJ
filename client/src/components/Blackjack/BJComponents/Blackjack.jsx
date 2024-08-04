@@ -228,7 +228,7 @@ export default function Blackjack() {
             window.sessionStorage.setItem("miniGameChipCount", chipCount);
             if (betsRemainingSS === 1) {
                 sendMiniGame(chipCount, betOutcomes, miniGameMutation)
-                setUserMoney((prev) => prev + chipCount);
+                setUserMoney((prev) => prev + (chipCount-100));
                 setTableChips(0)
                 setBetOutcomes([])
                 setIsMiniGame(false);
