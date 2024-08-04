@@ -1,5 +1,8 @@
 https://66ad6a8364f3fcee7437771e--deft-lokum-4b73ba.netlify.app/
 
+app needs to be redeployed after changes
+--------------------
+
 Backend Repository: https://github.com/BeMorr16/capstone_casino_backend
 ---------------------
 Frontend Repository: https://github.com/BeMorr16/capstone_casino_frontend
@@ -7,6 +10,7 @@ Frontend Repository: https://github.com/BeMorr16/capstone_casino_frontend
 Wise Guys Casino
 Overview
 Wise Guys Casino is an engaging online gambling platform that offers a variety of casino games including Blackjack, Roulette, and Slot Machines. Whether you're a seasoned gambler or a newcomer looking for some fun, Wise Guys Casino provides a thrilling experience with both guest and registered user options.
+
 ---------------------
 Features
 Guest Access: Play with unlimited virtual money to test strategies. Your funds reset with each game or page refresh.
@@ -14,6 +18,7 @@ Registered User Benefits: Create an account to save and track your progress. Acc
 Account Information and Advanced Stats: Manage your details, analyze advanced game statistics, and filter your bet slips/transaction history.
 Leaderboards and Competition: Compete for top rankings in various categories including highest winnings, most money accumulated, and best win percentage. Additional leaderboards for miniGame results.
 Blackjack Mini-Game: Challenge yourself with a special Blackjack mini-game. Logged-in users start with $100 and aim to achieve 10 straight wins. Track your performance and see how you rank on the leaderboard.
+
 ---------------------
 
 
