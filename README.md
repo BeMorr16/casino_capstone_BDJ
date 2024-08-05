@@ -1,4 +1,4 @@
-https://66ad6a8364f3fcee7437771e--deft-lokum-4b73ba.netlify.app/
+https://66b0f19e38c4bf18d852e247--gleaming-cajeta-de1afc.netlify.app/
 
 app needs to be redeployed after changes
 --------------------
