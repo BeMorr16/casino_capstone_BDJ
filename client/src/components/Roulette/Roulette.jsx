@@ -140,7 +140,7 @@ const Roulette = () => {
     const { totalWinnings, betResults, totalBetAmount, totalWonAmount } =
       calculateWinningsHelper(randomNumber, placedBets);
 
-    const newBalance = totalWinnings;
+    const newBalance = totalWinnings + chipCount;
     setChipCount(newBalance);
     setResult(totalWinnings);
     setLastBets(placedBets);
