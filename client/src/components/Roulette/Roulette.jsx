@@ -267,7 +267,7 @@ const Roulette = () => {
           <h2>Total Payout: ${result}</h2>
         </div>
         <div className="roulette-info-content">
-          <h2>Balance: ${chipCount}</h2>
+          <h2>Balance: ${tableChips}</h2>
         </div>
         <div className="roulette-info-content">
           <h2>Total Bet: ${totalBet}</h2> {/* Display total bet */}
