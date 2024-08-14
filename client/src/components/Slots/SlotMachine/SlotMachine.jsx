@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Slots from "../Slots/Slots";
@@ -6,12 +5,10 @@ import coinSound from "../assets/sounds/coin.mp3";
 import loseSound from "../assets/sounds/lose.mp3";
 import spinSound from "../assets/sounds/spin.mp3";
 import winSound from "../assets/sounds/win.mp3";
-import Options from "../Options/Options";
 import { addTransaction } from "../../Utils/APIRequests";
 import { useMutation } from "@tanstack/react-query";
-import SlotMachineIMG from "../assets/images/SlotMachine2.png";
 import useUserState from "../../../store/store";
-import "./SlotMachine.css";
+import SlotMachineUI from "./SlotMachineUI";
 
 //Variables
 const SlotMachine = () => {
@@ -28,24 +25,31 @@ const SlotMachine = () => {
   const winAudio = new Audio(winSound);
   const loseAudio = new Audio(loseSound);
   const coinAudio = new Audio(coinSound);
-  const { id, isLoggedIn, tableChips, userMoney, adjustTableChips, returnChipsToTotal } =
+  const { id, isLoggedIn, tableChips, adjustTableChips, returnChipsToTotal } =
     useUserState();
 
+  // Redirect user to casino page if no chips are selected when entering a game
   const [chipCount, setChipCount] = useState(() => {
     if (isLoggedIn) {
       if (tableChips > 0) {
         return tableChips;
       } else if (tableChips === 0) {
-        navigate("/casino");
+        setTimeout(() => {
+          navigate("/casino");
+        }, 10000);
         return 0;
       }
     }
     return 1000;
   });
-
+  // Redirect user to casino page if they don't have more chips
   useEffect(() => {
     if (isLoggedIn && tableChips === 0) {
-      navigate("/casino");
+      const timeout = setTimeout(() => {
+        navigate("/casino");
+      }, 10000);
+
+      return () => clearTimeout(timeout);
     }
   }, [isLoggedIn, tableChips, navigate]);
 
@@ -60,6 +64,7 @@ const SlotMachine = () => {
     }
   };
 
+  //Transactions Logic
   const transactionMutation = useMutation({
     mutationFn: addTransaction,
     onSuccess: (data) => {
@@ -129,8 +134,6 @@ const SlotMachine = () => {
   //Winning Logic
   const checkWin = (currentReels) => {
     let winAmount = 0;
-    console.log("Selected Bet:", selectedBet);
-    console.log("Current Reels:", currentReels);
 
     // selected Bets
     if (selectedBet) {
@@ -233,195 +236,42 @@ const SlotMachine = () => {
       result: result,
     };
 
-    console.log("Transaction:", transaction);
     transactionMutation.mutate(transaction);
-    console.log("Win Amount:", winAmount);
   };
 
-  console.log(userMoney, tableChips);
+  //Return your chips money when you go back to the casino page
+  const handleToCasino = () => {
+    returnChipsToTotal();
+    navigate("/casino");
+  };
+
+  const handleToBlackjack = () => {
+    navigate("/blackjack");
+  };
+
+  const handleToRoulette = () => {
+    navigate("/roulette");
+  };
 
   return (
-    <div className="SLTM-slot-machine-background">
-      <div className="SLTM-buttons-container">
-        <button
-          className="SLTMtoBlackJackButton"
-          onClick={() => {
-            returnChipsToTotal()
-            navigate("/blackjack")
-          }}
-        >
-          To BlackJack
-        </button>
-        <button
-          className="SLTMtoCasinoFloorButton"
-          onClick={() => {
-            returnChipsToTotal()
-            navigate("/casino") 
-            
-          }}
-        >
-          Back to Casino Floor
-        </button>
-        <button
-          className="SLTMtoRouletteButton"
-          onClick={() => {
-            returnChipsToTotal()
-            navigate("/roulette") 
-          }}
-        >
-          To Roulette
-        </button>
-      </div>
-      <div className="SLTM-Blankspace"></div>
-      <div className="SLTM-MainContainer">
-        <div className="SLTM-slot-machine-container">
-          <div
-            className={`SLTM-message-container ${
-              message.includes("You have won")
-                ? "SLTM-message-success"
-                : "SLTM-message-error"
-            }`}
-          >
-            {message}
-          </div>
-          <img
-            className="SLTM-SlotMachineIMG"
-            src={SlotMachineIMG}
-            alt="Slot Machine"
-          />
-          <div className="SLTM-reel-container">
-            {reels.map((Slot, index) => (
-              <div
-                key={index}
-                className={`SLTM-reel ${spin ? "spinning" : ""}`}
-              >
-                {Slot}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="SLTM-Blankspace"></div>
-        <div className="SLTM-BottomContainer">
-          <div className="SLTM-bet-amount-container">
-            <h3 className="SLTM-SLTMBetAmount">Bet Amount</h3>
-            <button
-              onClick={() => setBetAmount(5)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 5 ? "selected" : ""
-              }`}
-            >
-              5
-            </button>
-            <button
-              onClick={() => setBetAmount(10)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 10 ? "selected" : ""
-              }`}
-            >
-              10
-            </button>
-            <button
-              onClick={() => setBetAmount(25)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 25 ? "selected" : ""
-              }`}
-            >
-              25
-            </button>
-            <button
-              onClick={() => setBetAmount(50)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 50 ? "selected" : ""
-              }`}
-            >
-              50
-            </button>
-            <button
-              onClick={() => setBetAmount(100)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 100 ? "selected" : ""
-              }`}
-            >
-              100
-            </button>
-            <button
-              onClick={() => setBetAmount(1000)}
-              className={`SLTM-bet-amount-button ${
-                betAmount === 1000 ? "selected" : ""
-              }`}
-            >
-              1000
-            </button>
-          </div>
-          <div className="SLTM-spin-button-container">
-            <button
-              onClick={spinReels}
-              disabled={spin}
-              className={`SLTM-spin-button ${spin ? "disabled" : ""}`}
-            >
-              {spin ? "🔄 Spinning..." : `🎲 Spin (${betAmount} coins)`}
-            </button>
-          </div>
-          <h3 className="SLTM-SLTMSpecialBet">Special Bets</h3>
-          <div className="SLTM-betting-container">
-            <button
-              onClick={() => setSelectedBet("")}
-              className={`SLTM-bet-button ${
-                selectedBet === "" ? "selected" : ""
-              }`}
-            >
-              ❌
-            </button>
-            <button
-              onClick={() => setSelectedBet("👑")}
-              className={`SLTM-bet-button ${
-                selectedBet === "👑" ? "selected" : ""
-              }`}
-            >
-              👑
-            </button>
-            <button
-              onClick={() => setSelectedBet("🍒")}
-              className={`SLTM-bet-button ${
-                selectedBet === "🍒" ? "selected" : ""
-              }`}
-            >
-              🍒
-            </button>
-            <button
-              onClick={() => setSelectedBet("💰")}
-              className={`SLTM-bet-button ${
-                selectedBet === "💰" ? "selected" : ""
-              }`}
-            >
-              💰
-            </button>
-            <button
-              onClick={() => setSelectedBet("💎")}
-              className={`SLTM-bet-button ${
-                selectedBet === "💎" ? "selected" : ""
-              }`}
-            >
-              💎
-            </button>
-          </div>
-          <div className="SLTM-info-container">
-            <div className="SLTM-Money-info-container">
-              <span>💰 Coins: {chipCount}</span>
-              <span>🏆 Jackpot: {jackpot}</span>
-            </div>
-          </div>
-          <Options
-            className="SLMSoundOnOff"
-            toggleAudio={toggleAudio}
-            audio={audioOn}
-          />
-          {lastWin > 0 && (
-            <div className="SLTM-last-win">Last win: {lastWin} coins!</div>
-          )}
-        </div>
-      </div>
-    </div>
+    <SlotMachineUI
+      handleToBlackjack={handleToBlackjack}
+      handleToCasino={handleToCasino}
+      handleToRoulette={handleToRoulette}
+      message={message}
+      reels={reels}
+      spin={spin}
+      betAmount={betAmount}
+      setBetAmount={setBetAmount}
+      spinReels={spinReels}
+      selectedBet={selectedBet}
+      setSelectedBet={setSelectedBet}
+      chipCount={chipCount}
+      jackpot={jackpot}
+      lastWin={lastWin}
+      toggleAudio={toggleAudio}
+      audioOn={audioOn}
+    />
   );
 };
 
