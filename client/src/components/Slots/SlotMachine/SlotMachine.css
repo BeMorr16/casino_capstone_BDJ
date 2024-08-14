@@ -9,7 +9,7 @@
 
 .SLTM-buttons-container {
   position: absolute;
-  top: 80px; /* Adjust this value to position the row from the top */
+  top: 100px; /* Adjust this value to position the row from the top */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -61,7 +61,7 @@
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  transform: scale(0.9) translateY(-10%);
+  transform: scale(0.75) translateY(-18%);
 }
 
 .SLTM-Blankspace {
