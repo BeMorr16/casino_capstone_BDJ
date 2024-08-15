@@ -17,8 +17,9 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-left: 80px;
+  margin-right: 15px;
   justify-content: center;
 }
 
@@ -32,7 +33,7 @@
   text-align: center;
   max-height: 80px ;
   max-width: 200px; /* Optional: set a max width for buttons */
-  font-size: calc(1rem + 0.5vw); /* Adjust font size */
+  font-size: calc(.6vh + 0.6vw); /* Adjust font size */
   flex: 1 1 calc(30% - 1rem); /* Ensure buttons are evenly distributed */
 }
 
@@ -43,8 +44,9 @@
 .leaderboard {
   background-color: rgba(0, 0, 0, 0);
   padding: calc(1rem + 1vw);
-  height: calc(10rem + 14vw);
-  width: calc(10rem + 23vw);
+  /* height: calc(10rem + 14vw); */
+  height: 44vh;
+  width: 33vw;
   max-width: 80vw;
   font-family: 'Patrick Hand', sans-serif;
   font-size: calc(1rem + 1vw);
@@ -53,11 +55,26 @@
   border-top: 2px dashed rgba(255, 255, 255, 0.8);
   border-bottom: 2px dashed rgba(255, 255, 255, 0.8);
 }
+/* @media screen and (max-width: 1440px) {
+  .leaderboard {
+
+    width:calc((40vh+40vw)/2);
+  }
+} */
+
+.leaderboard-message{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: calc(.6vh + 0.6vw);
+  padding: 0;
+  margin: 0;
+}
 
 .leaderboard-grid {
   display: grid;
   gap: 1rem;
-  padding: 1rem;
+  padding: .2rem;
   justify-content: center; /* Center the grid items */
 }
 
@@ -76,12 +93,14 @@
 .leaderboard-grid .header {
   font-weight: bold;
   text-align: center;
+  font-size: calc(.9vh + 0.9vw);
 }
 
 .leaderboard-grid .cell {
   padding: calc(0.5rem + 0.5vw);
   border: 1px dashed white;
   transition: background-color 0.3s ease;
+  font-size: calc(.9vh + 0.9vw);
 }
 
 .leaderboard-grid .cell:hover {

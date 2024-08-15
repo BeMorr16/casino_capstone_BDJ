@@ -157,30 +157,33 @@ export default function Leaderboards() {
   }
 
   const renderBetLeaderboard = (data) => (
-    <div className="leaderboard-grid">
-      <div className="header" style={{ gridColumn: "1" }}>
-        Username
+    <>
+      <p className="leaderboard-message"> The amount bet is not included in amount won.</p>
+      <div className="leaderboard-grid">
+        <div className="header" style={{ gridColumn: "1" }}>
+          Username
+        </div>
+        <div className="header" style={{ gridColumn: "2" }}>
+          Game
+        </div>
+        <div className="header" style={{ gridColumn: "3" }}>
+          Amount Won
+        </div>
+        {data.map((item, index) => (
+          <React.Fragment key={index}>
+            <div className="cell" style={{ gridColumn: "1" }}>
+              {item.username}
+            </div>
+            <div className="cell" style={{ gridColumn: "2" }}>
+              {item.game}
+            </div>
+            <div className="cell" style={{ gridColumn: "3" }}>
+              {item.money}
+            </div>
+          </React.Fragment>
+        ))}
       </div>
-      <div className="header" style={{ gridColumn: "2" }}>
-        Game
-      </div>
-      <div className="header" style={{ gridColumn: "3" }}>
-        Amount Won
-      </div>
-      {data.map((item, index) => (
-        <React.Fragment key={index}>
-          <div className="cell" style={{ gridColumn: "1" }}>
-            {item.username}
-          </div>
-          <div className="cell" style={{ gridColumn: "2" }}>
-            {item.game}
-          </div>
-          <div className="cell" style={{ gridColumn: "3" }}>
-            {item.money}
-          </div>
-        </React.Fragment>
-      ))}
-    </div>
+    </>
   );
 
   const renderRecordLeaderboard = (data) => (

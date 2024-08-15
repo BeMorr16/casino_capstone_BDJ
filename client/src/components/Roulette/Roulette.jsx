@@ -37,26 +37,19 @@ const Roulette = () => {
       24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26,
     ],
   });
-  const {
-    tableChips,
-    isLoggedIn,
-    userMoney,
-    setUserMoney,
-    adjustTableChips,
-    id,
-  } = useUserState();
+  const { tableChips, isLoggedIn, adjustTableChips, id } = useUserState();
+
+  // useEffect(() => {
+  //   if (!isLoggedIn && tableChips === 0) {
+  //     setChipCount(1000)
+  //   }
+  // }, [isLoggedIn, tableChips]);
+  
+
 
   // Mutation setup
   const transactionMutation = useMutation({
     mutationFn: addTransaction,
-    onSuccess: (data) => {
-      console.log("Transaction response:", data);
-      if (data && data.editedUser.user_money !== undefined) {
-        setUserMoney(() => data.editedUser.user_money);
-      } else {
-        console.error("Unexpected response structure:", data);
-      }
-    },
     onError: (error) => {
       console.error("Error sending transaction:", error);
     },
@@ -65,21 +58,28 @@ const Roulette = () => {
   const [chipCount, setChipCount] = useState(() => {
     if (isLoggedIn) {
       if (tableChips > 0) {
-        adjustTableChips(0); // comment to remove this line
-        return userMoney;
+        // adjustTableChips(0);
+        return tableChips;
       } else {
-        navigate("/casino");
         return 0;
       }
+    } else {
+      if (tableChips === 0) {
+        adjustTableChips(1000)
+
+      }
+      return tableChips;
     }
-    return 1000;
   });
 
-  useEffect(() => {
-    if (tableChips === 0 && isLoggedIn) {
-      navigate("/casino");
-    }
-  }, [tableChips, isLoggedIn, navigate]);
+  // useEffect(() => {
+  //   if (tableChips === 0) {
+  //     if (!isLoggedIn) {
+  //       adjustTableChips(1000);
+  //       // setChipCount(1000);
+  //     }
+  //   }
+  // }, [isLoggedIn, tableChips, adjustTableChips]);
 
   const spinWheel = (number) => {
     const bezier = [0.165, 0.84, 0.44, 1.005];
@@ -126,11 +126,6 @@ const Roulette = () => {
     try {
       const response = await transactionMutation.mutateAsync(transaction);
       console.log("Transaction response:", response);
-      if (response && response.editedUser.user_money !== undefined) {
-        setUserMoney(()=> response.editedUser.user_money);
-      } else {
-        console.error("Unexpected response structure:", response);
-      }
     } catch (error) {
       console.error("Error sending transaction:", error);
     }
@@ -139,25 +134,45 @@ const Roulette = () => {
   const handleEndOfGame = (randomNumber) => {
     const { totalWinnings, betResults, totalBetAmount, totalWonAmount } =
       calculateWinningsHelper(randomNumber, placedBets);
+    console.log(`calc winnings helper: betAmount`)
+    console.log(
+      ` totalWinnings: ${totalWinnings}    totalBetAmount: ${totalBetAmount}`
+    );
+    console.log(
+      ` betResults: ${betResults}    totalWonAmount: ${totalWonAmount}`
+    );
+    console.log("---------------")
+    console.log("---------------")
+    console.log("---------------")
 
     const newBalance = totalWinnings + chipCount;
+    adjustTableChips(totalWinnings);
     setChipCount(newBalance);
     setResult(totalWinnings);
     setLastBets(placedBets);
     setPlacedBets([]);
     setTotalBet(0); // Reset total bet after the game ends
-    console.log(totalBetAmount, "------------")
-    const win = totalWonAmount > 0;
-    const money = win ? totalWonAmount : -totalBetAmount;
-    console.log(win, "WIN", money )
+    const win = totalWonAmount > 0 ? true : false;
+    const money = totalWonAmount;
+
     const resultDetails = {
       winningNumber: randomNumber,
       betResults: betResults
         .map((result) => `Bet: ${result.bet}, Payout: ${result.payout}`)
         .join(", "),
     };
-
     sendRouletteTransaction(win, money, resultDetails);
+
+    if (isLoggedIn) {
+      if (newBalance === 0) {
+        navigate("/casino");
+      }
+    } else {
+      if (newBalance === 0) {
+        adjustTableChips(1000);
+        setChipCount(1000)
+      }
+    }
   };
 
   const handleSpinClick = () => {
@@ -181,24 +196,11 @@ const Roulette = () => {
       alert("You cannot bet more than your current balance.");
       return;
     }
-    setPlacedBets((prevBets) => {
-      const existingBet = prevBets.find(
-        (bet) => JSON.stringify(bet.meaning) === JSON.stringify(newBet.meaning)
-      );
-      if (existingBet) {
-        const updatedBets = prevBets.map((bet) =>
-          JSON.stringify(bet.meaning) === JSON.stringify(newBet.meaning)
-            ? { ...bet, amount: bet.amount + newBet.amount }
-            : bet
-        );
-        return updatedBets;
-      } else {
-        return [...prevBets, newBet];
-      }
-    });
+    setPlacedBets([...placedBets, newBet]);
     setBetHistory((prevHistory) => [...prevHistory, newBet]);
-    setChipCount((prevBalance) => prevBalance - newBet.amount);
-    setTotalBet((prevTotal) => prevTotal + newBet.amount); // Update total bet
+    setChipCount(chipCount - newBet.amount); // Directly update chipCount
+    adjustTableChips(-newBet.amount);
+    setTotalBet(totalBet + newBet.amount);
   };
 
   const handleUndoLastBet = () => {
@@ -220,6 +222,7 @@ const Roulette = () => {
       return prevBets;
     });
     setChipCount((prevBalance) => prevBalance + lastBet.amount);
+    adjustTableChips(lastBet.amount);
     setBetHistory((prevHistory) => prevHistory.slice(0, -1));
     setTotalBet((prevTotal) => prevTotal - lastBet.amount); // Update total bet
   };
@@ -227,6 +230,7 @@ const Roulette = () => {
   const handleClearBets = () => {
     const totalBets = placedBets.reduce((acc, bet) => acc + bet.amount, 0);
     setChipCount((prevBalance) => prevBalance + totalBets);
+    adjustTableChips(totalBets);
     setPlacedBets([]);
     setTotalBet(0); // Reset total bet
   };
@@ -238,6 +242,7 @@ const Roulette = () => {
       return;
     }
     setChipCount((prevBalance) => prevBalance - totalLastBets);
+    adjustTableChips(-totalLastBets);
     setPlacedBets(lastBets.map((bet) => ({ ...bet })));
     setTotalBet(totalLastBets); // Update total bet
   };
