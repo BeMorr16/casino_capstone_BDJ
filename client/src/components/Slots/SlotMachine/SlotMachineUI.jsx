@@ -1,5 +1,6 @@
 import React from "react";
-import SlotMachineIMG from "../assets/images/SlotMachine2.png";
+import SlotMachineIMG from "../assets/images/SlotMachine3.png";
+import SlotMachineIMG2 from "../assets/images/SlotMachine5.png"
 import Options from "../Options/Options";
 import "./SlotMachine.css";
 
@@ -64,6 +65,11 @@ const SlotMachineUI = ({
         </div>
         <div className="SLTM-Blankspace"></div>
         <div className="SLTM-BottomContainer">
+        <img
+            className="SLTM-SlotMachineIMG2"
+            src={SlotMachineIMG2}
+            alt="Slot Machine"
+          />
           <div className="SLTM-bet-amount-container">
             <h3 className="SLTM-SLTMBetAmount">Bet Amount</h3>
             <button
