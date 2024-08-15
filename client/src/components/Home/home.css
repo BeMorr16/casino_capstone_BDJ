@@ -1,116 +1,364 @@
-/* LandingPage.css */
-
 .landing-page {
-    font-family: Arial, sans-serif;
-    color: white;
-    line-height: 1.6;
-    padding: 20px;
+  color: #f5f5f5;
+  font-family: 'Playfair Display', serif;
+  background-image: url('../Slots/assets/images/image.png');
+  background-size: cover; /* Ensures the background covers the whole area */
+  background-attachment: fixed; /* Fixes the background image position */
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
 
-    margin: 0 auto;
-    background: url('/images/home-background.png')no-repeat center center fixed;
-    background-size: cover;
+.welcome-section {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url('/images/home-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  border-bottom: 2px solid #B8860B;
+}
+
+/*black transparent overlay */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.425); 
+  z-index: -1; 
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #F0E68C;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  color: #F0E68C;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  width: 70%;
+  margin: 0 auto;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.home-links {
+  color: #F0E68C;
+}
+
+.home-links:hover {
+  border-color: rgba(255, 174, 55, 0.6);
+  text-shadow: 0 0 15px rgba(255, 174, 55, 0.75), 0 0 5px rgba(255, 174, 55, 0.6);
+}
+
+.Home-content-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Home-content-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.blackjack-mini-game {
+  width: 800px;
+  height: 220px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  background: #000000b2;
+}
+
+.leaderboards{
+  width: 715px;
+  height: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-right: 70px;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  background: #000000b2;
+}
+
+.guest-access{
+  width: 480px;
+  height: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  background: #000000b2;
+}
+
+.registered-user-benefits{
+  width: 500px;
+  height: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  background: #000000b2;
+}
+
+.account-info-stats{
+  width: 570px;
+  height: 220px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  background: #000000b2;
+}
+
+.guest-access h2, .registered-user-benefits h2, .account-info-stats h2, .leaderboards h2, .blackjack-mini-game h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #F0E68C;
+}
+
+.guest-access p, .registered-user-benefits p, .account-info-stats p, .leaderboards p, .blackjack-mini-game p {
+  font-size: 1rem;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2C2C2C;
+  border: 3px solid  #B8860B;
+  border-radius: 8px;
+  text-shadow: 1px 1px 2px #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2C2C2C;
+  border-color: rgba(255, 174, 55, 0.6);
+  box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+}
+
+.home-end-section {
+  background: #000000b2;
+  border: 2px solid #B8860B;
+  border-radius: 8px;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  color: #F0E68C;
+}
+
+@media (max-width: 1440px) {
+
+  .welcome-section {
+    padding: 90px 20px;
+  }
+
+  .welcome-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.1rem;
+    width: 80%;
+  }
+
+  .Home-content-1,
+  .Home-content-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .blackjack-mini-game,
+  .leaderboards,
+  .guest-access,
+  .registered-user-benefits,
+  .account-info-stats {
+    width: 400px;
+    height: auto;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+  }
+
+  .cta-button {
+    font-size: 17px;
+  }
+
+  .home-end-section {
+    width: 85%;
+    padding: 15px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cta-button {
+    display: flex;
+    flex-direction: row;
   }
   
   .welcome-section {
-    text-align: center;
-    padding: 30px 0;
-    background-color: #000000b2;
-    border: 2px solid #B8860B;
-    border-radius: 8px;
-  }
-  
-  .welcome-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #F0E68C;
-  }
-  .welcome-section h2 {
-    font-size: 2rem;
-    color: #F0E68C;
-  }
-  
-  .welcome-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    width: 70%;
-    margin: 0 auto;
+    padding: 80px 15px;
   }
 
-  .home-links {
-    color: #F0E68C;
+  .welcome-section h1 {
+    font-size: 2rem;
   }
-  
-  .guest-access, .registered-user-benefits, .account-info-stats, .leaderboards, .blackjack-mini-game {
-    padding: 20px;
-    margin: 20px 0;
-    border: 2px solid #B8860B;
-    border-radius: 8px;
-    background: #000000b2;
+
+  .welcome-section h2 {
+    font-size: 1.6rem;
   }
-  
-  .guest-access h2, .registered-user-benefits h2, .account-info-stats h2, .leaderboards h2, .blackjack-mini-game h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #F0E68C;;
-  }
-  
-  .guest-access p, .registered-user-benefits p, .account-info-stats p, .leaderboards p, .blackjack-mini-game p {
+
+  .welcome-section p {
     font-size: 1rem;
+    width: 90%;
   }
-  
-  .cta-section {
-    text-align: center;
-    padding: 40px 0;
+
+  .Home-content-1,
+  .Home-content-2 {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+
+  .blackjack-mini-game,
+  .leaderboards,
+  .guest-access,
+  .registered-user-benefits,
+  .account-info-stats {
+    width: 90%;
+    height: auto;
+    margin: 10px 0;
   }
-  
+
+  .home-end-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 60px 10px;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.9rem;
+  }
+
+  .blackjack-mini-game,
+  .leaderboards,
+  .guest-access,
+  .registered-user-benefits,
+  .account-info-stats {
+    width: 100%;
+  }
+
+  .cta-button {
+    font-size: 16px;
+  }
+
   .cta-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .cta-button {
-    padding: 10px 20px;
-    font-family: 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #2C2C2C;
-    border: 3px solid  #B8860B;
-    border-radius: 8px;
-    text-shadow: 1px 1px 2px #000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    flex-direction: row;
   }
 
-  
-  .cta-button:hover {
-    background-color: #2C2C2C;
-    border-color: rgba(255, 174, 55, 0.6);
-    box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+  .cta-button {
+    display: flex;
+    flex-direction: row;
   }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 40px 5px;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .welcome-section p {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
   .home-end-section {
-    background: #000000b2;
-    border: 2px solid #B8860B;
-    border-radius: 8px;
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    padding: 10px;
-    color: #F0E68C;
+    width: 100%;
+    padding: 8px;
   }
-  
-  @media (max-width: 768px) {
-    .cta-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-  
+}

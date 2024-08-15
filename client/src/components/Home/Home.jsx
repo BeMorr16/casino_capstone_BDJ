@@ -1,12 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
 import './home.css'
-// import React from 'react'
 
 export default function Home() {
   const navigate = useNavigate();
 
 
-  return (
+return (
     <>
       <div className="landing-page">
       <header className="welcome-section">
@@ -16,9 +15,9 @@ export default function Home() {
         Dive into a world of excitement and chance with our online casino, featuring Blackjack, Roulette, and Slot Machines. Whether you’re a seasoned gambler or a curious newcomer, we have something for everyone. Visit our how to play pages &#40;<Link className="home-links" to="/howtoplay/blackjack">Blackjack</Link>, <Link className="home-links" to="/howtoplay/roulette">Roulette</Link>, <Link className="home-links" to="/howtoplay/slots">Slots</Link>&#41;  for all the guidance you need to get started.
         </p>
       </header>
-      
+      <div className="Home-content-1">
       <section className="guest-access">
-        <h2>Guest Access</h2>
+        <h2>Guest Access</h2> 
         <p>
           As a guest, you have the freedom to play with an unlimited amount of money to test your skills and strategies. Your funds reset each time you enter a game or refresh the page, giving you endless opportunities to refine your strategy.
         </p>
@@ -36,8 +35,9 @@ export default function Home() {
         <p>
           Your cashier page offers a comprehensive view of your gaming journey, allowing you to edit your details, analyze advanced stats for each game, and search and filter your bet slips/transaction history.
         </p>
-      </section>
-      
+      </section>      
+        </div>
+        <div className="Home-content-2">
       <section className="leaderboards">
         <h2>Leaderboards and Competition</h2>
         <p>
@@ -51,14 +51,14 @@ export default function Home() {
           One of the fantastic features of our casino is the Blackjack mini-game. Logged-in users can embark on this challenge with $100 and 10 hands to maximize their winnings. Track your mini-game performance on your cashier page and see how you rank on the leaderboard. Aim for the perfect game of 10 straight wins and earn your place in the hall of fame.
         </p>
       </section>
-      
+        </div>
         <p className="home-end-section">
           Join us now to experience the excitement and competition our casino has to offer. Whether you choose to play as a guest or a registered user, the adventure awaits.
         </p>
         <div className="cta-buttons">
         <button className="cta-button" onClick={() => navigate('/account')}>Login</button>
-          <button className="cta-button" onClick={() => navigate('/casino')}>Guest</button>
-        </div>
+        <button className="cta-button" onClick={() => navigate('/casino')}>Guest</button>
+      </div>
     </div>
     </>
   )
