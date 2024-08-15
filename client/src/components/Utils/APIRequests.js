@@ -129,6 +129,23 @@ export async function authorizeUserRequest() {
     throw error
   }
 }
+export async function getMiniGameStats(id) {
+  try {
+    const token = window.sessionStorage.getItem("token");
+    const { data } = await axios.get(`https://capstone-casino-backend.onrender.com/transaction/minigame/history/${id}`, 
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    console.log(error)
+    throw error
+  }
+}
 export async function editUserRequest(user) {
   try {
     const token = window.sessionStorage.getItem("token");

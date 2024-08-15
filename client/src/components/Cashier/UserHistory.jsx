@@ -8,8 +8,8 @@ export default function UserHistory() {
     const [winOrLoss, setWinOrLoss] = useState("");
 
     const { data: filteredData, isLoading, isError } = useBetSlips(gameSelection, winOrLoss);
-
-    if (isLoading) {
+    const isDataLoading = isLoading && !filteredData?.length;
+    if (isDataLoading) {
         return <div>Is Loading...</div>
     }
 

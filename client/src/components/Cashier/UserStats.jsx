@@ -50,45 +50,48 @@ export default function UserStats() {
     return (
       <div className="user-stats">
       <h2 className="Cashier-User-Stats">User Stats</h2>
-        <div className="user-stats-content">
-      <div className="stat-section total">
-        <h3>Total</h3>
-        <p>Bets: {totalGames}</p>
-        <p>Record: {totalWins}W - {totalLosses}L</p>
-        <p>Win Percentage: {totalWinPercentage}%</p>
-        <p>+/- Money: ${totalMoneyChange.toFixed(2)}</p>
-      </div>
-      
-      <div className="stat-section blackjack">
-        <h3>Blackjack</h3>
-        <p>Percentage of Bets: {getPercentage(blackjackGames, totalGames)}% ({blackjackGames} bets)</p>
-        <p>Record: {blackjackWins}W - {blackjackLosses}L - {blackjackPushes}P</p>
-        <p>Win Percentage: {getPercentage(blackjackWins, blackjackGames)}%</p>
-        <p>+/-$ Money: {blackjackMoney.toFixed(2)}</p>
-        <p>Average Win: ${getAverage(blackjackWinMoney, blackjackWins)}</p>
-        <p>Average Loss: ${getAverage(blackjackLossMoney, blackjackLosses)}</p>
-      </div>
-      
-      <div className="stat-section roulette">
-        <h3>Roulette</h3>
-        <p>Percentage of Bets: {getPercentage(rouletteGames, totalGames)}% ({rouletteGames} bets)</p>
-        <p>Record: {rouletteWins}W - {rouletteLosses}L</p>
-        <p>Win Percentage: {getPercentage(rouletteWins, rouletteGames)}%</p>
-        <p>+/-$ Money: {rouletteMoney.toFixed(2)}</p>
-        <p>Average Win: ${getAverage(rouletteWinMoney, rouletteWins)}</p>
-        <p>Average Loss: ${getAverage(rouletteLossMoney, rouletteLosses)}</p>
-      </div>
-      
-      <div className="stat-section slots">
-        <h3>Slots</h3>
-        <p>Percentage of Bets: {getPercentage(slotGames, totalGames)}% ({slotGames} bets)</p>
-        <p>Record: {slotWins}W - {slotLosses}L</p>
-        <p>Win Percentage: {getPercentage(slotWins, slotGames)}%</p>
-        <p>+/-$ Money: {slotMoney.toFixed(2)}</p>
-        <p>Average Win: ${getAverage(slotWinMoney, slotWins)}</p>
-        <p>Average Loss: ${getAverage(slotLossMoney, slotLosses)}</p>
+      <div className="user-stats-content">
+    
+        <div className="stat-section total">
+          <h3>Total</h3>
+          <p><span className="label">Bets:</span> <span className="value">{totalGames}</span></p>
+          <p><span className="label">Rec:</span> <span className="value">{totalWins}W - {totalLosses}L</span></p>
+          <p><span className="label">Win %:</span> <span className="value">{totalWinPercentage}%</span></p>
+          <p><span className="label">+/- $:</span> <span className="value">{totalMoneyChange.toFixed(2)}</span></p>
+        </div>
+    
+        <div className="stat-section blackjack">
+          <h3>Blackjack</h3>
+          <p><span className="label">% of Bets:</span> <span className="value">{getPercentage(blackjackGames, totalGames)}% ({blackjackGames})</span></p>
+          <p><span className="label">Rec:</span> <span className="value">{blackjackWins}W - {blackjackLosses}L - {blackjackPushes}</span></p>
+          <p><span className="label">Win %:</span> <span className="value">{getPercentage(blackjackWins, blackjackGames)}%</span></p>
+          <p><span className="label">+/- $:</span> <span className="value">{blackjackMoney.toFixed(2)}</span></p>
+          <p><span className="label">Avg Win:</span> <span className="value">{getAverage(blackjackWinMoney, blackjackWins)}</span></p>
+          <p><span className="label">Avg Loss:</span> <span className="value">{getAverage(blackjackLossMoney, blackjackLosses)}</span></p>
+        </div>
+    
+        <div className="stat-section roulette">
+          <h3>Roulette</h3>
+          <p><span className="label">% of Bets:</span> <span className="value">{getPercentage(rouletteGames, totalGames)}% ({rouletteGames})</span></p>
+          <p><span className="label">Rec:</span> <span className="value">{rouletteWins}W - {rouletteLosses}L</span></p>
+          <p><span className="label">Win %:</span> <span className="value">{getPercentage(rouletteWins, rouletteGames)}%</span></p>
+          <p><span className="label">+/- $:</span> <span className="value">{rouletteMoney.toFixed(2)}</span></p>
+          <p><span className="label">Avg Win:</span> <span className="value">{getAverage(rouletteWinMoney, rouletteWins)}</span></p>
+          <p><span className="label">Avg Loss:</span> <span className="value">{getAverage(rouletteLossMoney, rouletteLosses)}</span></p>
+        </div>
+    
+        <div className="stat-section slots">
+          <h3>Slots</h3>
+          <p><span className="label">% of Bets:</span> <span className="value">{getPercentage(slotGames, totalGames)}% ({slotGames})</span></p>
+          <p><span className="label">Rec:</span> <span className="value">{slotWins}W - {slotLosses}L</span></p>
+          <p><span className="label">Win %:</span> <span className="value">{getPercentage(slotWins, slotGames)}%</span></p>
+          <p><span className="label">+/- $:</span> <span className="value">{slotMoney.toFixed(2)}</span></p>
+          <p><span className="label">Avg Win:</span> <span className="value">{getAverage(slotWinMoney, slotWins)}</span></p>
+          <p><span className="label">Avg Loss:</span> <span className="value">{getAverage(slotLossMoney, slotLosses)}</span></p>
+        </div>
+    
       </div>
     </div>
-    </div>
+    
     )
 }

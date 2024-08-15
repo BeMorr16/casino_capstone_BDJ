@@ -23,7 +23,7 @@ export default function BJnavigations() {
       }
     
     return (
-      <div>
+      <div className="BJnavButtons">
     <button className="BJtoCasinoFloorButton" onClick={handleToCasino}>
           Back to Casino Floor
         </button>

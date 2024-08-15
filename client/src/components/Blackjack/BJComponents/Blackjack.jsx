@@ -271,6 +271,7 @@ export default function Blackjack() {
   return (
     <>
       <div className="BJBody">
+      <BJnavigations/>
         <div className="blackjackTopOuterContainer">
           {showWinner && <h2 className="BJWinnerDisplay">{winner}</h2>}
           <div className="blackjackMainSection">
@@ -315,10 +316,13 @@ export default function Blackjack() {
                )}
 
               <div className="BJChipCountContainer">
-            <h2 className="BJChipCountHeader">CHIPS</h2>
-            <div className="BJChipCount">{chipCount - betAmount - sideBetAmount}</div>
+          <h2 className="BJChipCountHeader">{!isMiniGame ? 'CHIPS' : 'MINIGAME'}</h2>
+          <div className="BJChipCount">
+            <p>{chipCount - betAmount - sideBetAmount}</p>
+            <p>{isMiniGame && `${10 - betOutcomes.length} bets remaining`}</p>
           </div>
-              <BJnavigations/>
+          
+          </div>
       </div>
     </>
   );

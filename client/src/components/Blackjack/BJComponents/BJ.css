@@ -2,7 +2,7 @@
     width: inherit;
     height: inherit;
     /* margin-bottom: 5rem; */
-    background: url('/images/Carpet.png');
+    background: url('/images/casinoFloor.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,14 +14,15 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    background-image: url('/BJimages/Bjtable.png');
+    background-image: url('/images/Bjvintagetable.png');
     background-size: 90% auto;
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
     align-items: center;
     gap: 0;
-    height: 102vh;
+    height: 112vh;
+    margin-top: 1rem;
 }
 
 .blackjackMainSection {
@@ -40,7 +41,7 @@
     align-items: center;
     min-width: 150px;
     width: 400px;
-    padding-left: 14rem;
+    padding-left: 22rem;
     /* Prevented shift by adding width */
 }
 
@@ -57,8 +58,8 @@
 .blackjackCardSection {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-end;
+    justify-content: center;
     width: 100%;
 }
 
@@ -86,7 +87,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-right: 15rem;
+    padding-left: 5rem;
     width: auto;
 }
 .blackjackTurnControls{
@@ -140,7 +141,7 @@
     display: flex;
     gap: 1rem;
     z-index: 999;
-    margin-bottom: 5rem;
+    margin-bottom: 4.5rem;
 }
 .BJbetAmountBeforeHand {
     /* position: absolute;
@@ -155,6 +156,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    margin-top: 2.5rem;
 }
 .BJBetCircles {
     display: flex;
@@ -166,20 +168,32 @@
     padding: 0;
 }
 
-.chipButton {
-    height: 50px; 
-    width: 50px;  
-    border-radius: 50%;
-}
 
 .blackjackUserControls button {
     cursor: pointer;
 }
 .betControls {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
 }
+
+.chipButton {
+    height: 60px; 
+    width: 60px;  
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: url('/images/Chip-darkblue.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    letter-spacing: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .betControls button {
     line-height: 1.5rem; /* Adjust line height for vertical alignment */
     width: 120px; /* Set button width */
@@ -213,7 +227,7 @@
 .BJChipCountContainer {
     position: absolute;
     right: 25.5%;
-    top: 70%;
+    top: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,8 +260,8 @@
 
 .BJPreviousBetContainer {
     position: absolute;
-    top: 5rem;
-    left: 3rem;
+    top: 16rem;
+    left: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -256,13 +270,13 @@
   }
   .BJPreviousBetContainer p {
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   .BJSideBetContainer {
     position: absolute;
-    bottom: 0rem;
-    left: 3rem;
+    top: 13rem;
+    right: 5rem;
     transform: translateY(70px);
     display: flex;
     flex-direction: column;
@@ -295,21 +309,13 @@
     text-align: center;
   }
 
-.BJtoCasinoFloorButton {
-    position: absolute;
-    /* bottom: 2rem; */
-    left: 2rem;
-}
-.BJtoSlotsButton {
-    position: absolute;
-    top: 6rem;
-    right: 3rem;
-}
-.BJtoRouletteButton {
-    position: absolute;
-    right: 3rem;
-    /* bottom: 2rem; */
-}
+  .BJnavButtons{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
 
 .BJtoCasinoFloorButton,
 .BJtoSlotsButton,

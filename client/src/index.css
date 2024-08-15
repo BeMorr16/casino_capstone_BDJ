@@ -2,3 +2,11 @@ body {
     box-sizing: border-box;
     margin: 0;
 }
+
+.leaderboardBackground{
+    background-image: url('./components/Leaderboards/assets/LeaderBoard.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}

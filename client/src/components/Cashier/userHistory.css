@@ -1,13 +1,15 @@
 .bet-table {
   border: 2px solid #b8860b; 
   border-radius: 12px;
-  max-width: 1550px;
   margin: 20px auto;
   background: #000000b2; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
   padding: 20px;
   overflow: auto; 
   max-height: 600px; 
+  max-width: 800px;
+  width: 800px;
+  height: 600px;
 }
 
 .User-History-h2{
@@ -16,7 +18,7 @@
 
 /* Custom Scrollbar */
 .bet-table::-webkit-scrollbar {
-  width: 12px; 
+  width: 6px; 
 }
 
 .bet-table::-webkit-scrollbar-track {
@@ -50,7 +52,7 @@
 
 .filter-group label {
   font-weight: bold;
-  color: #ffffff; 
+  color: #f0e68c; 
   border-color: transparent
 }
 
@@ -62,12 +64,18 @@
   background: #000000b2;
   color: #fff; 
 }
+#game-select:hover{
+  cursor: pointer;
+}
+#win-loss-select:hover{
+  cursor: pointer;
+}
 
 .table-headers {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   font-weight: bold;
-  color: #ffffff; 
+  color: #f0e68c; 
   padding: 10px;
   border-bottom: 2px solid #b8860b;
 }

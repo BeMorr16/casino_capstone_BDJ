@@ -1,0 +1,110 @@
+.minigame-bet-table {
+    border: 2px solid #b8860b;
+    border-radius: 12px;
+    margin: 20px auto;
+    background: #000000b2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow: auto;
+    max-height: 600px;
+    max-width: 550px;
+    width: 550px;
+    height: 600px;
+  }
+  
+  .minigame-User-History-h2 {
+    color: #ffffff;
+  }
+  
+  /* Custom Scrollbar */
+  .minigame-bet-table::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .minigame-bet-table::-webkit-scrollbar-track {
+    background: #000000b2;
+    border-radius: 10px;
+  }
+  
+  .minigame-bet-table::-webkit-scrollbar-thumb {
+    background: #b8860b;
+    border-radius: 10px;
+    border-color: rgba(255, 174, 55, 0.6);
+  }
+  
+  .minigame-bet-table::-webkit-scrollbar-thumb:hover {
+    border-color: rgba(255, 174, 55, 0.6);
+    box-shadow: 0 0 15px 5px rgba(255, 174, 55, 0.75);
+  }
+  
+  .minigame-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .minigame-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .minigame-filter-group label {
+    font-weight: bold;
+    color: #f0e68c;
+    border-color: transparent;
+  }
+  
+  .minigame-filter-group select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #b8860b;
+    font-size: 16px;
+    background: #000000b2;
+    color: #fff;
+  }
+  #sort-select:hover{
+    cursor: pointer;
+  }
+  
+  .minigame-table-headers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    font-weight: bold;
+    color: #f0e68c;
+    padding: 10px;
+    border-bottom: 2px solid #b8860b;
+  }
+  
+  .minigame-table-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+  
+  .minigame-table-row {
+    display: contents;
+  }
+  
+  .minigame-table-cell {
+    background: #000000b2;
+    padding: 10px;
+    color: #ffffff;
+  }
+  
+  .minigame-table-cell:nth-child(odd) {
+    background: #000000b2;
+  }
+  
+  .minigame-table-cell:nth-child(even) {
+    background: #000000b2;
+  }
+  
+  .minigame-table-row:nth-child(odd) {
+    background: #000000b2;
+  }
+  
+  .minigame-table-row:nth-child(even) {
+    background: #000000b2;
+  }
+  

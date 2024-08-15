@@ -28,7 +28,14 @@ const router = createBrowserRouter([
       { path: '/', element: <Home/> },
       { path: '/howtoplay/:game', element: <HowToPlay/>},
       { path: '/account', element: <LoginRegister/> },
-      { path: '/leaderboards', element: <Leaderboards/> },
+      {
+        path: '/leaderboards',
+        element: (
+          <div className="leaderboardBackground">
+          <Leaderboards />
+          </div>
+        )
+      },
       { path: '/casino', element: <Casino/> },
       { path: '/slots', element: <SlotMachine/> },
       { path: '/roulette', element: <Roulette/> },

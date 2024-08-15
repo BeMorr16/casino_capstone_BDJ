@@ -1,61 +1,80 @@
-.Cashier-User-Stats{
-color:#ffffff;
+/* General Styling */
+.Cashier-User-Stats {
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.user-stats-content{
+.user-stats-content {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  justify-content: space-between; /* Ensures even spacing between sections */
 }
 
 .user-stats {
   border: 2px solid #b8860b;
-  border-radius: 12px; 
+  border-radius: 12px;
   max-width: 800px;
   margin: 20px auto;
-  background: #000000b2; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  background: #000000b2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   padding: 20px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
+/* Section Styling */
 .stat-section {
-  padding: 16px 0;
+  flex: 1; /* Distributes space evenly among sections */
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #1a1a1a; /* A dark background for contrast */
+  margin: 0 10px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7); /* Adds a subtle inset shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .stat-section h3 {
-  font-size: 20px;
-  color: #ffffff; 
-  font-family: 'Times New Roman', serif; 
-  margin-bottom: 10px;
+  font-size: 22px;
+  color: #f0e68c; /* A more golden color for section titles */
+  font-family: 'Times New Roman', serif;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #b8860b;
+  padding-bottom: 5px;
+  width: 100%;
+  text-align: center;
 }
 
 .stat-section p {
-  font-size: 16px;
-  color: #f0e68c; 
-  font-family: 'Times New Roman', serif; 
+  font-size: 18px;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between; /* Separates the label and value */
+  width: 100%;
 }
 
-.total {
-  border-radius: 8px; 
-  padding: 8px 12px;
-  margin-bottom: 10px;
+.stat-section p .label {
+  font-weight: bold; /* Emphasize the label */
+  color: #f0e68c; /* Golden color for labels */
 }
 
-.blackjack {
-  border-radius: 8px; 
-  padding: 8px 12px;
-  margin-bottom: 10px;
+.stat-section p .value {
+  text-align: right; /* Align the value to the right */
+  color: white; /* Light color for values */
 }
 
-.roulette {
-  border-radius: 8px; 
-  padding: 8px 12px;
-  margin-bottom: 10px;
+/* Hover Effects */
+.stat-section:hover {
+  background-color: #292929;
+  transition: background-color 0.3s ease;
 }
 
-.slots {
-  border-radius: 8px; 
-  padding: 8px 12px;
-  margin-bottom: 10px;
+/* Spacing between sections */
+.stat-section:not(:last-child) {
+  margin-bottom: 20px;
 }
