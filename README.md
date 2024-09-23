@@ -1,5 +1,4 @@
-https://wiseguyscasinobdj.netlify.app/
-
+Live version: https://wiseguyscasinobdj.netlify.app/
 --------------------
 
 Backend Repository: https://github.com/BeMorr16/capstone_casino_backend
