@@ -1,6 +1,5 @@
 https://wiseguyscasinobdj.netlify.app/
 
-app needs to be redeployed after changes
 --------------------
 
 Backend Repository: https://github.com/BeMorr16/capstone_casino_backend
