@@ -1,4 +1,4 @@
-https://66b0f19e38c4bf18d852e247--gleaming-cajeta-de1afc.netlify.app/
+https://wiseguyscasinobdj.netlify.app/
 
 app needs to be redeployed after changes
 --------------------
